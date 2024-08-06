@@ -6,7 +6,7 @@ const cookieParser=require("cookie-parser");
 const connectDb=require("./config/connectDb");
 const errorHandler=require("./middleware/errorHandler");
 const bodyParser=require("body-parser");
-const port=process.env.port_number;
+const port=process.env.PORT;
 
 //limit of payload
 App.use(bodyParser.json({limit:"5mb",extended:true}));
