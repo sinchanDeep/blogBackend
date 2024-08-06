@@ -4,7 +4,7 @@ const allBlog=require("../models/blogModel");
 const allblogs=require("../models/saveBlogModel");
 const cookieParser=require("cookie-parser");
 const nodemailer=require("nodemailer");
-const bcrypt=require("bcrypt");
+const bcrypt=require("bcryptjs");
 //const loginModel = require("../models/loginModel");
 
 //@desc api to store registration data
