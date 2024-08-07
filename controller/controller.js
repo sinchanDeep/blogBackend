@@ -91,7 +91,13 @@ const saveBlog=asyncHandler(async(req,res)=>{
         picture="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80";
     }
     try{      
+        console.log(humanDate);
         date=new Date(); 
+         day=updDate.getUTCDay();
+         month=updDate.getUTCMonth();
+         year=updDate.getUTCFullYear();
+         humanDate="";
+         humanDate=day+"/"+month+"/"+year;
         const save = await allBlog.create({
             date,
             description,
