@@ -68,11 +68,10 @@ const getAllBlogs = asyncHandler(async(req,res)=>{
 const saveBlog=asyncHandler(async(req,res)=>{ 
     let {date,description,picture,title,name}=req.body;
     const blogExist=await allBlog.find({date:date,name:name});
-    let updDate=new Date();
-        let day=updDate.getUTCDay();
-        let month=updDate.getUTCMonth();
-        let year=updDate.getUTCFullYear();
-        let humanDate=day+"/"+month+"/"+year;
+    const updDate=new Date();
+        const month=updDate.getUTCMonth();
+        const year=updDate.getUTCFullYear(); 
+        const humanDate=updDate.getUTCDate()+" /"+month+" /"+year;
     if(blogExist.length>0)
     {
         
@@ -92,12 +91,6 @@ const saveBlog=asyncHandler(async(req,res)=>{
     }
     try{      
         console.log(humanDate);
-        date=new Date(); 
-         day=updDate.getUTCDay();
-         month=updDate.getUTCMonth();
-         year=updDate.getUTCFullYear();
-         humanDate="";
-         humanDate=day+"/"+month+"/"+year;
         const save = await allBlog.create({
             date,
             description,
